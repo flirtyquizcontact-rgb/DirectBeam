@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DirectBeam: File Transfer</title>
+<meta name="description" content="Official information, privacy policy, terms and data controls for DirectBeam: File Transfer.">
+<meta name="theme-color" content="#07111f">
+<style>
+:root{
+  --bg:#07111f;--panel:#0e1b2d;--panel2:#12233a;--text:#eef6ff;
+  --muted:#a9bdd2;--accent:#59d8ff;--accent2:#6d7cff;--line:#203954;
+  --ok:#69e6b3;--max:1080px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+background:radial-gradient(circle at 15% 0%,#102d49 0,#07111f 38%),var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{width:min(var(--max),calc(100% - 32px));margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.88);backdrop-filter:blur(14px);
+border-bottom:1px solid var(--line)}
+.nav-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-weight:800;letter-spacing:.2px;color:#fff}
+.nav-links{display:flex;flex-wrap:wrap;gap:18px;font-size:.94rem}
+.hero{padding:86px 0 54px}
+.badge{display:inline-block;border:1px solid #2c6680;background:#0d2838;color:#9beaff;
+padding:6px 12px;border-radius:999px;font-size:.84rem;font-weight:700}
+h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:1.05;margin:18px 0}
+h2{font-size:1.65rem;margin:42px 0 12px}
+h3{font-size:1.12rem;margin:26px 0 8px}
+.lead{max-width:780px;font-size:1.12rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:38px 0}
+.card,.content{background:linear-gradient(180deg,rgba(18,35,58,.94),rgba(12,25,42,.94));
+border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.card h3{margin-top:0}
+.content{margin:34px 0 64px;padding:clamp(22px,4vw,48px)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:800}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06111d}
+.btn-secondary{border:1px solid var(--line);background:#0c1a2a;color:#fff}
+.note{border-left:4px solid var(--accent);background:#0b2032;padding:14px 18px;border-radius:8px;margin:22px 0}
+.ok{border-left-color:var(--ok)}
+ul{padding-left:22px}
+li{margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.95rem}
+th,td{border:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}
+th{background:#10263d}
+.small{color:var(--muted);font-size:.92rem}
+footer{border-top:1px solid var(--line);padding:28px 0 44px;color:var(--muted);font-size:.9rem}
+code{background:#091827;border:1px solid var(--line);padding:2px 6px;border-radius:6px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.nav-inner{align-items:flex-start;padding:14px 0;flex-direction:column}.hero{padding-top:54px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+<a class="brand" href="index.html">DirectBeam</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
+<a href="data-deletion.html">Data deletion</a>
+</div></div></nav>
+
+<header class="hero"><div class="wrap">
+<span class="badge">DIRECT LOCAL FILE TRANSFER</span>
+<h1>DirectBeam:<br>File Transfer</h1>
+<p class="lead">Send files directly between Android devices, connect multiple receivers with Group Beam, or move files between your phone and computer through your local network.</p>
+<div class="btns">
+<a class="btn btn-primary" href="privacy.html">Read Privacy Policy</a>
+<a class="btn btn-secondary" href="data-deletion.html">Data controls</a>
+</div>
+</div></header>
+<main class="wrap">
+<section class="grid">
+<article class="card"><h3>Android to Android</h3><p>Direct device-to-device transfers with authenticated Secure Transport V6 and AES-256-GCM encryption.</p></article>
+<article class="card"><h3>Group Beam</h3><p>Share selected files with multiple nearby Android receivers while keeping progress and retry status visible per device.</p></article>
+<article class="card"><h3>PC Connect</h3><p>Transfer files through a browser on the same trusted local network using a temporary authenticated session.</p></article>
+</section>
+<section class="content">
+<h2>Built around local transfer</h2>
+<p>DirectBeam does not require a DirectBeam account and does not upload your selected transfer files to a DirectBeam cloud server. Files are transferred between the devices you choose.</p>
+<div class="note ok"><strong>Important:</strong> PC Connect uses an authenticated local HTTP session and should be used only on a trusted private network. Android-to-Android Secure Transport V6 and PC Connect use different transport security models.</div>
+<h2>Core functions</h2>
+<ul>
+<li>Send and receive files directly between compatible Android devices.</li>
+<li>Wi-Fi Direct as the primary one-to-one transport, with compatible local-network fallback.</li>
+<li>Group Beam for supported multi-device transfers.</li>
+<li>PC Connect for browser-based local transfer.</li>
+<li>Transfer progress, integrity verification and supported resume workflows.</li>
+<li>Optional DirectBeam Pro purchase through Google Play Billing.</li>
+</ul>
+<h2>Support and legal information</h2>
+<p>For privacy questions, data requests or support, email <a href="mailto:flirtyquiz.contact@gmail.com">flirtyquiz.contact@gmail.com</a>.</p>
+<div class="btns">
+<a class="btn btn-secondary" href="privacy.html">Privacy Policy</a>
+<a class="btn btn-secondary" href="terms.html">Terms of Service</a>
+<a class="btn btn-secondary" href="data-deletion.html">Data Deletion</a>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">
+<strong>DirectBeam: File Transfer</strong><br>
+No account. No cloud. No complexity.<br><br>
+<a href="mailto:flirtyquiz.contact@gmail.com">flirtyquiz.contact@gmail.com</a>
+<span> · </span><a href="privacy.html">Privacy Policy</a>
+<span> · </span><a href="terms.html">Terms of Service</a>
+<span> · </span><a href="data-deletion.html">Data Deletion</a>
+<p>© 2026 DirectBeam. All rights reserved.</p>
+</div></footer>
+</body></html>
