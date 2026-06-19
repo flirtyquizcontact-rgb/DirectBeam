@@ -1,12 +1,17 @@
 # DirectBeam Legal Website
 
-Files:
-- `index.html` — official DirectBeam landing page
-- `privacy.html` — Privacy Policy
-- `terms.html` — Terms of Service
-- `data-deletion.html` — Data Deletion and Local Data Controls
+Public pages:
+- Home: https://flirtyquizcontact-rgb.github.io/DirectBeam/
+- Privacy Policy: https://flirtyquizcontact-rgb.github.io/DirectBeam/privacy.html
+- Terms of Service: https://flirtyquizcontact-rgb.github.io/DirectBeam/terms.html
+- Data Deletion: https://flirtyquizcontact-rgb.github.io/Data-Deletion-Request/
 
-Contact used in these files:
+Repository files:
+- `index.html`
+- `privacy.html`
+- `terms.html`
+
+Contact:
 `flirtyquiz.contact@gmail.com`
 
 Last updated: 2026-06-19
