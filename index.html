@@ -168,6 +168,18 @@ code{
   }
   .hero{padding-top:54px}
 }
+.brand{display:inline-flex;align-items:center;gap:9px}
+.brand-icon{display:block;width:42px;height:42px;object-fit:cover;border-radius:12px;box-shadow:0 7px 25px #35b8ec33;transition:transform .25s ease}
+.brand:hover .brand-icon{transform:scale(1.07)}
+.hero-icon-wrap{position:relative;width:108px;height:108px;margin:0 0 22px}
+.hero-icon{width:108px;height:108px;display:block;object-fit:cover;border-radius:26px;box-shadow:0 20px 60px #0d75bf44;animation:beamFloat 6s ease-in-out infinite}
+.card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 25px 60px #0005;border-color:#57c5eb88}
+.btn{transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);text-decoration:none;box-shadow:0 12px 26px #0004}
+a:focus-visible{outline:3px solid #ffda85;outline-offset:4px}
+@keyframes beamFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;transform:none!important}}
 </style>
 
 </head>
@@ -176,10 +188,10 @@ code{
 
 <nav>
   <div class="wrap nav-inner">
-    <a class="brand" href="index.html">Direct<span>Beam</span></a>
+    <a class="brand" href="index.html"><img class="brand-icon" src="https://play-lh.googleusercontent.com/yA0eCNGCP8iwyPnvoc7XECDZReeQOPjFHlIO_jgY5SolQcJEFQyx1HNsQKF4YPdQElkXKyo-wxKaUsLnOiGhuEo=w240-h480" width="42" height="42" alt="">Direct<span>Beam</span></a>
 
 
-<div class="nav-links">
+<div class="nav-links"><a href="https://flirtyquizcontact-rgb.github.io/">All apps</a>
   <a href="index.html">Home</a>
   <a href="privacy.html">Privacy</a>
   <a href="terms.html">Terms</a>
@@ -192,6 +204,7 @@ code{
 
 <header class="hero">
   <div class="wrap">
+    <div class="hero-icon-wrap"><img class="hero-icon" src="https://play-lh.googleusercontent.com/yA0eCNGCP8iwyPnvoc7XECDZReeQOPjFHlIO_jgY5SolQcJEFQyx1HNsQKF4YPdQElkXKyo-wxKaUsLnOiGhuEo=w240-h480" width="108" height="108" alt="Official DirectBeam icon from Google Play"></div>
     <span class="badge">FAST · PRIVATE · LOCAL</span>
 
 
@@ -215,7 +228,8 @@ code{
 </div>
 
 <div class="btns">
-  <a class="btn btn-primary" href="privacy.html">Read Privacy Policy</a>
+  <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.quizfans.directbeam">Get DirectBeam on Google Play ↗</a>
+  <a class="btn btn-secondary" href="privacy.html">Read Privacy Policy</a>
   <a class="btn btn-secondary" href="terms.html">Read Terms</a>
   <a class="btn btn-secondary" href="https://flirtyquizcontact-rgb.github.io/Data-Deletion-Request/">Data controls</a>
 </div>
