@@ -180,6 +180,28 @@ code{
 a:focus-visible{outline:3px solid #ffda85;outline-offset:4px}
 @keyframes beamFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;transform:none!important}}
+
+/* Original Google Play screenshots gallery: responsive, keyboard and touch accessible */
+.qfs-gallery{--qfs-glow:#88e5fa;clear:both;width:100%;max-width:100%;min-width:0;margin:46px 0 58px;padding:clamp(19px,3vw,30px);background:linear-gradient(150deg,rgba(25,34,58,.79),rgba(12,18,35,.82));border:1px solid rgba(193,205,244,.2);border-radius:23px;box-shadow:0 15px 42px rgba(0,0,0,.15);color:#f4f8ff;text-align:left}
+.qfs-gallery *{box-sizing:border-box}
+.qfs-gallery-top{display:flex;gap:15px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}
+.qfs-gallery-label{display:block;color:var(--qfs-glow);font-size:.73rem;letter-spacing:.15em;text-transform:uppercase;font-weight:850;margin-bottom:7px}
+.qfs-gallery h2{font-size:clamp(1.42rem,2.8vw,2.1rem);line-height:1.2;letter-spacing:-.03em;margin:0 0 10px;color:#fff}
+.qfs-gallery-description{margin:0;color:#c4cede;font-size:.94rem;max-width:690px;line-height:1.7}
+.qfs-gallery-controls{display:flex;gap:9px;flex-shrink:0}
+.qfs-gallery button{appearance:none;cursor:pointer;width:43px;height:43px;border:1px solid rgba(210,226,255,.3);border-radius:12px;background:rgba(130,168,229,.13);color:#f6faff;font:700 1.2rem/1 system-ui,sans-serif;transition:background .2s,transform .2s}
+.qfs-gallery button:hover{background:rgba(146,201,242,.24);transform:translateY(-2px)}
+.qfs-gallery button:focus-visible,.qfs-gallery a:focus-visible{outline:3px solid #ffdc91;outline-offset:3px}
+.qfs-gallery-track{display:flex;gap:16px;width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-padding-inline:4px;padding:5px 4px 19px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#778db4 transparent}
+.qfs-gallery-track:focus-visible{outline:2px solid var(--qfs-glow);outline-offset:-1px;border-radius:10px}
+.qfs-gallery-shot{flex:0 0 clamp(175px,22vw,234px);min-width:0;margin:0;scroll-snap-align:start;position:relative}
+.qfs-gallery-shot a{display:block;border-radius:18px;overflow:hidden;background:#090c1b;border:1px solid rgba(194,215,255,.27);box-shadow:0 12px 30px rgba(0,0,0,.3);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.qfs-gallery-shot a:hover{transform:translateY(-4px);box-shadow:0 18px 35px rgba(0,0,0,.4);border-color:var(--qfs-glow)}
+.qfs-gallery-shot img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:linear-gradient(135deg,#122137,#0a0a18)}
+.qfs-gallery-shot figcaption{color:#d8e3f8;font-weight:670;font-size:.83rem;line-height:1.45;margin-top:11px;min-height:2.2em}
+.qfs-gallery-hint{color:#97aac6;font-size:.77rem;margin:4px 0 0;line-height:1.4}
+@media(max-width:720px){.qfs-gallery{padding:17px;margin:32px 0 42px;border-radius:19px}.qfs-gallery-track{gap:12px}.qfs-gallery-shot{flex-basis:clamp(164px,53vw,215px)}.qfs-gallery-top{align-items:flex-start}.qfs-gallery h2{font-size:1.5rem}}
+@media(prefers-reduced-motion:reduce){.qfs-gallery button,.qfs-gallery-shot a{transition:none!important;transform:none!important}.qfs-gallery-track{scroll-behavior:auto!important}}
 </style>
 
 </head>
@@ -296,6 +318,26 @@ a:focus-visible{outline:3px solid #ffda85;outline-offset:4px}
 
 </section>
 
+
+<section class="qfs-gallery" id="screenshots-directbeam" style="--qfs-glow:#77e6ff" aria-labelledby="screenshots-title-directbeam">
+ <div class="qfs-gallery-top">
+  <div><span class="qfs-gallery-label">Official Google Play screenshots</span>
+   <h2 id="screenshots-title-directbeam">File transfers, step by step</h2>
+   <p class="qfs-gallery-description">Explore real DirectBeam screenshots for Android, iPhone, iPad and computer transfer workflows.</p>
+  </div>
+  <div class="qfs-gallery-controls" aria-label="Gallery navigation">
+   <button type="button" data-qfs-scroll="prev" aria-label="Scroll screenshots left">←</button>
+   <button type="button" data-qfs-scroll="next" aria-label="Scroll screenshots right">→</button>
+  </div>
+ </div>
+ <div class="qfs-gallery-track" role="group" aria-label="Four original Google Play screenshots" tabindex="0">
+  <figure class="qfs-gallery-shot"><a href="https://play-lh.googleusercontent.com/r9i6-vZAYIEyXv5Q5hfow3Wbj166sRo3m_TWDGXNLRfDLh162uD3J3tZurX0bQ8_4sh2-aRgAvimCsuBRVsm2w=w526-h296" rel="noopener noreferrer" target="_blank" aria-label="Open full screenshot: Android, iPhone and PC"><img src="https://play-lh.googleusercontent.com/r9i6-vZAYIEyXv5Q5hfow3Wbj166sRo3m_TWDGXNLRfDLh162uD3J3tZurX0bQ8_4sh2-aRgAvimCsuBRVsm2w=w526-h296" loading="lazy" decoding="async" alt="Android, iPhone and PC, official screenshot 1 of 4" width="234" height="416"></a><figcaption>Android, iPhone and PC</figcaption></figure>
+  <figure class="qfs-gallery-shot"><a href="https://play-lh.googleusercontent.com/h1DS_2mo7vXpiPcNcDjV20muuqyFbsDBTMzH_AnE_eVb7CoA30KjyEsM5rN8Lguu0DkawA9--olMUOqg-yLyPw=w526-h296" rel="noopener noreferrer" target="_blank" aria-label="Open full screenshot: Transfer to iPhone"><img src="https://play-lh.googleusercontent.com/h1DS_2mo7vXpiPcNcDjV20muuqyFbsDBTMzH_AnE_eVb7CoA30KjyEsM5rN8Lguu0DkawA9--olMUOqg-yLyPw=w526-h296" loading="lazy" decoding="async" alt="Transfer to iPhone, official screenshot 2 of 4" width="234" height="416"></a><figcaption>Transfer to iPhone</figcaption></figure>
+  <figure class="qfs-gallery-shot"><a href="https://play-lh.googleusercontent.com/WaziAtet4h1WRPfrq0wL1gQJ2Dp3E3bKaONgzNk3XQL2e3RJ_X472yg-4m09l4sPHCPSRBTouUVSw4byX6iSRA=w526-h296" rel="noopener noreferrer" target="_blank" aria-label="Open full screenshot: iPhone to Android"><img src="https://play-lh.googleusercontent.com/WaziAtet4h1WRPfrq0wL1gQJ2Dp3E3bKaONgzNk3XQL2e3RJ_X472yg-4m09l4sPHCPSRBTouUVSw4byX6iSRA=w526-h296" loading="lazy" decoding="async" alt="iPhone to Android, official screenshot 3 of 4" width="234" height="416"></a><figcaption>iPhone to Android</figcaption></figure>
+  <figure class="qfs-gallery-shot"><a href="https://play-lh.googleusercontent.com/SlRJi_xxp92YIS7x7DOjVNSkqne2k-jVZS8XVUyE8oNEsiwWkfP7EdOPEGLC0UBO7T-NljeXIjy6JX2WoOnv7Q=w526-h296" rel="noopener noreferrer" target="_blank" aria-label="Open full screenshot: PC Connect"><img src="https://play-lh.googleusercontent.com/SlRJi_xxp92YIS7x7DOjVNSkqne2k-jVZS8XVUyE8oNEsiwWkfP7EdOPEGLC0UBO7T-NljeXIjy6JX2WoOnv7Q=w526-h296" loading="lazy" decoding="async" alt="PC Connect, official screenshot 4 of 4" width="234" height="416"></a><figcaption>PC Connect</figcaption></figure>
+ </div>
+ <p class="qfs-gallery-hint">Swipe to explore more screenshots or use the arrows. Select a screenshot to view it separately.</p>
+</section>
 <section class="content">
 
   <h2>Local browser transfer for Apple devices</h2>
@@ -387,5 +429,21 @@ a:focus-visible{outline:3px solid #ffda85;outline-offset:4px}
   </div>
 </footer>
 
+
+<script>
+/* Clickable gallery arrows; touch swipes and keyboard scrolling also work. */
+document.querySelectorAll(".qfs-gallery").forEach(function(section){
+  var rail=section.querySelector(".qfs-gallery-track");
+  if(!rail)return;
+  var reduced=window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  section.querySelectorAll("[data-qfs-scroll]").forEach(function(button){
+    button.addEventListener("click",function(){
+      var direction=button.getAttribute("data-qfs-scroll")==="prev"?-1:1;
+      var width=rail.querySelector(".qfs-gallery-shot")?.getBoundingClientRect().width || 210;
+      rail.scrollBy({left:direction*(width+16)*2,behavior:reduced?"auto":"smooth"});
+    });
+  });
+});
+</script>
 </body>
 </html>
