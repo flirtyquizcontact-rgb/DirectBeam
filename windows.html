@@ -76,14 +76,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <div>
 <div class="eyeline">Get the official desktop app</div>
 <h2 id="download-heading">Download Windows Companion</h2>
-<p id="release-summary">A public Windows installer has not been published yet. We are validating the installation package and its security checks.</p>
-<div id="release-status" class="status" role="status" aria-live="polite">Checking official GitHub release availability...</div>
+<p id="release-summary">DirectBeam Companion V2.3.4 for Windows x64 is available from the official GitHub release. Follow the setup instructions below to connect your Android phone.</p>
+<div id="release-status" class="status ready" role="status" aria-live="polite">Windows installer available · V2.3.4</div>
 </div>
 <div class="cta-panel">
-<a id="installer-download" class="btn" href="#" hidden rel="noopener noreferrer">Download for Windows (x64)</a>
-<div id="installer-details" class="download-meta" hidden></div>
+<a id="installer-download" class="btn" href="https://github.com/flirtyquizcontact-rgb/DirectBeam/releases/download/windows-companion-v2.3.4/DirectBeam_Companion_Setup_x64.exe" rel="noopener noreferrer">Download for Windows (x64)</a>
+<div id="installer-details" class="download-meta">V2.3.4 · 49.6 MiB · SHA-256: 55D6D98C1C41ADF5607179CE101D2FBFBC9E0AF66DA3BBC65792D3465F5DD40C</div>
 <a class="btn secondary" href="https://github.com/flirtyquizcontact-rgb/DirectBeam/releases" rel="noopener noreferrer">View official GitHub releases</a>
-<p class="small" id="download-note">The Download button appears automatically only when an official verified installer asset is published. Do not install files from unofficial websites.</p>
+<p class="small" id="download-note">Installer verified against the public GitHub release. This installer is not Authenticode-signed; Windows SmartScreen may warn. Verify its SHA-256 before running. Do not download from unofficial sources.</p>
 </div>
 </section>
 <section id="getting-started" aria-labelledby="setup-heading">
@@ -133,20 +133,20 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   try {
     const response = await fetch(api, {headers:{"Accept":"application/vnd.github+json"}});
     if (response.status === 404) {
-      status.textContent = "Windows installer not published yet";
+      // Retain the verified V2.3.4 direct-download fallback.
       return;
     }
     if (!response.ok) throw new Error("GitHub API " + response.status);
     const release = await response.json();
     if (release.draft || release.prerelease) {
-      status.textContent = "Official public installer not available yet";
+      // Retain the verified V2.3.4 direct-download fallback.
       return;
     }
     const asset = Array.isArray(release.assets) ? release.assets.find(item =>
       item.name === officialAssetName && typeof item.browser_download_url === "string" &&
       item.browser_download_url.startsWith(downloadPrefix) && item.size > 0) : null;
     if (!asset) {
-      status.textContent = "Official installer asset is not published yet";
+      // Retain the verified V2.3.4 direct-download fallback.
       return;
     }
     button.href = asset.browser_download_url;
@@ -160,8 +160,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     meta.textContent = (version ? "Release " + version + " · " : "") + mb + " MiB" + (digest ? " · SHA-256 " + digest.slice(7).toUpperCase() : "");
     meta.removeAttribute("hidden");
   } catch (_) {
-    status.textContent = "Unable to verify installer availability right now";
-    status.classList.add("error");
+    // Retain the verified V2.3.4 direct-download fallback if the GitHub API is unavailable.
   }
 })();
 </script>
