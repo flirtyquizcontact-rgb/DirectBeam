@@ -70,7 +70,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <div class="eyebrow">Official Windows Companion</div>
 <h1>DirectBeam <span>for Windows.</span></h1>
 <p class="lead">Connect your Android phone to Windows. Send files, receive downloads and manage authorized folders on your trusted local network, with a dedicated desktop interface.</p>
-<div class="hero-tags"><span>Windows PC</span><span>Local Wi-Fi</span><span>Secure pairing</span><span>Basic transfers are free</span></div>
+<div class="hero-tags"><span>Windows 10/11 x64</span><span>Local Wi-Fi</span><span>Secure pairing</span><span>Basic transfers are free</span></div>
 </div>
 <section class="release" aria-labelledby="download-heading" id="download">
 <div>
@@ -106,7 +106,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <div class="feature"><strong>Batch Downloads &amp; Download ZIP</strong><p>Pro tools for saving multiple selected files and exporting selected DirectBeam PC Workspace files as one ZIP archive.</p></div>
 <div class="feature"><strong>Smart Sync &amp; Advanced Folders</strong><p>Compare files and retrieve selected items without automatic deletion or overwriting. Browse only directories individually approved through the Android system folder picker.</p></div>
 </div>
-<div class="note">The advanced controls are undergoing release validation. The Pro feature list describes the intended current Companion release; availability depends on the Android and Windows versions used together. Pro is an optional one-time in-app purchase on Android.</div>
+<div class="note">Advanced controls require compatible Android and Windows versions and an eligible Pro preview or Pro purchase. Availability and changes are documented in the official Windows release notes. Pro is an optional one-time in-app purchase on Android.</div>
 </section>
 <section id="troubleshooting" aria-labelledby="help-heading">
 <div class="section-title"><div class="eyeline">Troubleshooting</div><h2 id="help-heading">If your phone does not connect</h2></div>
@@ -115,6 +115,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <details><summary>Photos, videos or documents are missing from Phone Library</summary><p>Android restricts access to personal storage. Grant the relevant media permission when requested, or choose files through the Android picker. For Advanced Folders, first add a specific authorized folder on the phone. The Windows app cannot automatically read all private folders.</p></details>
 <details><summary>When does my Pro preview start and end?</summary><p>The one-time five-minute preview begins only when you confirm its activation after connecting the phone. It allows new Pro actions during the remaining time. A transfer already underway can finish after the timer ends; Free transfers remain available.</p></details>
 <details><summary>Where are downloads saved?</summary><p>Windows downloads are normally placed under your Downloads\DirectBeam folder, unless you choose a different destination in the Companion.</p></details>
+<details><summary>Windows warns about an unknown publisher or SmartScreen. What should I do?</summary><p>Some Windows releases may not have an Authenticode code-signing certificate and can trigger a Windows security prompt. Download only from this official page or the linked GitHub repository, and compare the installer SHA-256 with the value in the release notes before proceeding. Do not disable Windows Defender or SmartScreen system-wide. If you cannot verify the installer, do not run it.</p></details>
 <details><summary>Why is the installer button unavailable?</summary><p>Only public releases with the verified Windows installer asset name are offered here. If no release is published or the GitHub release service cannot be checked, the page does not offer an unverified executable. Check the official GitHub releases link above.</p></details>
 </section>
 </main>
