@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#050812">
 <meta name="description" content="Official DirectBeam Companion Windows download, setup guide, pairing, troubleshooting and Pro features.">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://flirtyquizcontact-rgb.github.io/DirectBeam/windows.html">
+<link rel="canonical" href="https://quizfansstudio.github.io/DirectBeam/windows.html">
 <title>DirectBeam Companion for Windows | Download & Setup</title>
 <style>
 :root{color-scheme:dark;--bg:#050812;--panel:#101827;--panel2:#151f31;--ink:#f5faff;--muted:#b7c8dd;--subtle:#8da4c1;--cyan:#42e8ff;--blue:#3a8dff;--violet:#9b7bff;--line:rgba(142,181,234,.25)}
@@ -77,12 +77,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <div class="eyeline">Get the official desktop app</div>
 <h2 id="download-heading">Download Windows Companion</h2>
 <p id="release-summary">DirectBeam Companion V2.3.4 for Windows x64 is available from the official GitHub release. Follow the setup instructions below to connect your Android phone.</p>
+<p class="small">The public installer is <strong>Windows Companion 2.3.4</strong>. A newer six-language desktop interface has passed local QA but is <strong>not yet included</strong> in this published installer. Check the release version before installing.</p>
 <div id="release-status" class="status ready" role="status" aria-live="polite">Windows installer available · V2.3.4</div>
 </div>
 <div class="cta-panel">
-<a id="installer-download" class="btn" href="https://github.com/flirtyquizcontact-rgb/DirectBeam/releases/download/windows-companion-v2.3.4/DirectBeam_Companion_Setup_x64.exe" rel="noopener noreferrer">Download for Windows (x64)</a>
+<a id="installer-download" class="btn" href="https://github.com/QuizFansStudio/DirectBeam/releases/download/windows-companion-v2.3.4/DirectBeam_Companion_Setup_x64.exe" rel="noopener noreferrer">Download for Windows (x64)</a>
 <div id="installer-details" class="download-meta">V2.3.4 · 49.6 MiB · SHA-256: 55D6D98C1C41ADF5607179CE101D2FBFBC9E0AF66DA3BBC65792D3465F5DD40C</div>
-<a class="btn secondary" href="https://github.com/flirtyquizcontact-rgb/DirectBeam/releases" rel="noopener noreferrer">View official GitHub releases</a>
+<a class="btn secondary" href="https://github.com/QuizFansStudio/DirectBeam/releases" rel="noopener noreferrer">View official GitHub releases</a>
+<p class="small"><strong>Verified SHA-256 of Windows Companion 2.3.4 installer:</strong> <code>55d6d98c1c41adf5607179ce101d2fbfbc9e0af66da3bbc65792d3465f5dd40c</code>. This checksum is specific to the 2.3.4 installer, not future releases. For a newer installer, verify the hash shown in its own release notes.</p>
 <p class="small" id="download-note">Installer verified against the public GitHub release. This installer is not Authenticode-signed; Windows SmartScreen may warn. Verify its SHA-256 before running. Do not download from unofficial sources.</p>
 </div>
 </section>
@@ -108,6 +110,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </div>
 <div class="note">Advanced controls require compatible Android and Windows versions and an eligible Pro preview or Pro purchase. Availability and changes are documented in the official Windows release notes. Pro is an optional one-time in-app purchase on Android.</div>
 </section>
+<section aria-labelledby="windows-legal-heading"><div class="note"><h2 id="windows-legal-heading">Privacy and file safety on Windows</h2><p>Pairing information is stored locally on your PC, including a phone identifier and TLS fingerprint; the pairing credential is stored in Windows Credential Manager. Transfer files are saved in the folder you select. Uninstalling Windows Companion may not remove those downloaded files or paired-device records. Visit the <a href="privacy.html">DirectBeam Privacy Policy</a>, <a href="terms.html">Terms of Service</a> and <a href="https://quizfansstudio.github.io/Data-Deletion-Request/">Data Deletion &amp; Local Data Controls</a> for more details.</p><p>Windows Companion uses authenticated HTTPS for supported paired-device connections. The alternative browser-transfer mode uses local HTTP; only use that mode on trusted private networks. Never share pairing codes, tokens or local connection addresses publicly.</p><p>Support: <a href="mailto:quizfans.studio@gmail.com">quizfans.studio@gmail.com</a>.</p></div></section>
+
 <section id="troubleshooting" aria-labelledby="help-heading">
 <div class="section-title"><div class="eyeline">Troubleshooting</div><h2 id="help-heading">If your phone does not connect</h2></div>
 <details><summary>Windows cannot find my Android phone</summary><p>Confirm the Android PC Connect session is started and both devices are on the same trusted LAN. Keep the phone app active for the first pairing. Some routers or firewalls block local discovery; use the app's manual connection flow if available and compare the certificate before approving.</p></details>
@@ -119,7 +123,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <details><summary>Why is the installer button unavailable?</summary><p>Only public releases with the verified Windows installer asset name are offered here. If no release is published or the GitHub release service cannot be checked, the page does not offer an unverified executable. Check the official GitHub releases link above.</p></details>
 </section>
 </main>
-<footer><div class="wrap"><span>© 2026 DirectBeam · Quiz Fans Studio</span><span><a href="./">DirectBeam</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:flirtyquiz.contact@gmail.com">Support</a></span></div></footer>
+<footer><div class="wrap"><span>© 2026 DirectBeam · Quiz Fans Studio</span><span><a href="./">DirectBeam</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:quizfans.studio@gmail.com">Support</a></span></div></footer>
 <script>
 "use strict";
 (async function checkOfficialInstaller() {
@@ -127,9 +131,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   const summary = document.getElementById("release-summary");
   const button = document.getElementById("installer-download");
   const meta = document.getElementById("installer-details");
-  const api = "https://api.github.com/repos/flirtyquizcontact-rgb/DirectBeam/releases/latest";
+  const api = "https://api.github.com/repos/QuizFansStudio/DirectBeam/releases/latest";
   const officialAssetName = "DirectBeam_Companion_Setup_x64.exe";
-  const downloadPrefix = "https://github.com/flirtyquizcontact-rgb/DirectBeam/releases/download/";
+  const downloadPrefix = "https://github.com/QuizFansStudio/DirectBeam/releases/download/";
   try {
     const response = await fetch(api, {headers:{"Accept":"application/vnd.github+json"}});
     if (response.status === 404) {
