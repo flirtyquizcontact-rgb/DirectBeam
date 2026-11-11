@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Privacy Policy - DirectBeam: File Transfer</title>
+<link rel="canonical" href="https://quizfansstudio.github.io/DirectBeam/privacy.html">
 <meta name="description" content="Privacy Policy for DirectBeam: File Transfer, including Android, Apple and browser-based local transfer functions.">
 <meta name="theme-color" content="#07111f">
 <meta name="robots" content="index,follow">
@@ -127,7 +128,7 @@ code{
   <a href="index.html">Home</a>
   <a href="privacy.html">Privacy</a>
   <a href="terms.html">Terms</a>
-  <a href="https://flirtyquizcontact-rgb.github.io/Data-Deletion-Request/">Data controls</a>
+  <a href="https://quizfansstudio.github.io/Data-Deletion-Request/">Data controls</a>
 </div>
 ```
 
@@ -144,12 +145,12 @@ code{
   <p class="lead">
     This Privacy Policy explains how DirectBeam: File Transfer accesses,
     processes, stores, transfers and protects information when you use its
-    Android, nearby-device, local-network and browser-transfer functions.
+    Android, optional Windows Companion, nearby-device, local-network and browser-transfer functions.
   </p>
 
   <p class="small">
     <strong>Effective date:</strong> June 21, 2026 ·
-    <strong>Last updated:</strong> June 21, 2026
+    <strong>Last updated:</strong> November 11, 2026
   </p>
 </header>
 
@@ -170,8 +171,11 @@ code{
 </p>
 
 <p>
+  <strong>Publisher and data controller:</strong> Laurențiu Iancu, an independent developer operating under the public name <strong>Quiz Fans Studio</strong>, Romania. Windows Companion is an optional desktop component of DirectBeam; it is not a separate cloud-storage provider.</p>
+<p>
+
   Privacy and support contact:
-  <a href="mailto:flirtyquiz.contact@gmail.com">flirtyquiz.contact@gmail.com</a>.
+  <a href="mailto:quizfans.studio@gmail.com">quizfans.studio@gmail.com</a>.
 </p>
 
 <h2>2. Key privacy summary</h2>
@@ -256,6 +260,10 @@ code{
   Android device rather than by a DirectBeam cloud-storage server.
 </p>
 
+<h3>3.5 Optional DirectBeam Windows Companion</h3>
+<p>The Windows Companion is a separate, optional Windows desktop application used with DirectBeam on Android. When you explicitly connect and authorize it, the desktop app may discover your Android device on the local network, establish an authenticated HTTPS connection with certificate-fingerprint verification, display the files and folders made available by Android, and send or receive files you select. The desktop client is distinct from the browser-based PC Connect HTTP workflow.</p>
+<p>For those operations, the two devices may exchange device identifiers, display names, local IP addresses and ports, TLS certificate fingerprints, pairing or session credentials, file names, sizes, folder information, progress, integrity information and selected file contents. Only the connected devices participate in the ordinary local file transfer. The user controls which device, folder, file and destination is authorized; other local-network participants must not be treated as trusted merely because they share a Wi-Fi connection.</p>
+
 <h2>4. Transfer metadata and technical information</h2>
 
 <p>
@@ -311,6 +319,9 @@ code{
   DirectBeam may expire or invalidate local browser sessions after inactivity,
   completion, manual shutdown or when the user leaves the transfer function.
 </p>
+
+<h3>5.1 Windows Companion pairing security</h3>
+<p>Supported Windows Companion connections use HTTPS with verification of the Android device's presented TLS certificate fingerprint. The first connection requires device pairing and user approval. A remembered device may subsequently reconnect using locally stored pairing information. This desktop connection does <strong>not</strong> make browser-based HTTP mode encrypted; browser mode remains a different transfer path. Protect your phone, PC, pairing code and local network, and unpair devices you no longer trust.</p>
 
 <h2>6. No DirectBeam cloud storage</h2>
 
@@ -381,6 +392,10 @@ code{
   Files already saved outside the app’s private storage must be deleted from
   their destination by the device owner.
 </p>
+
+<h3>8.1 Information stored locally on a Windows PC</h3>
+<p>The Windows Companion implementation reviewed for this update stores paired-phone metadata (device identifier, TLS fingerprint and last-known local endpoint) at <code>%LOCALAPPDATA%\DirectBeam\Companion\phone.json</code>. The pairing secret is stored separately in <strong>Windows Credential Manager</strong>, not in that metadata file. Pairing failures may create a local <code>pairing-diagnostic.log</code> with timestamps, operation stage, exception type and HTTP status, without intentionally recording pairing codes or transfer-file contents.</p>
+<p>Files received or exported to Windows are saved to the folder you select or the application's displayed default destination, commonly under your Windows Downloads folder. Windows may also create temporary files or operating-system records during ordinary operation. Deleting the desktop program does not necessarily delete files already exported, paired-device metadata, stored credentials or local logs. The Windows PC owner must manage those separately. The Companion does not require a separate DirectBeam account.</p>
 
 <h2>9. Diagnostics and support information</h2>
 
@@ -515,6 +530,9 @@ code{
   Safety declaration must be updated before or when that build is distributed.
 </p>
 
+<h3>12.1 Website and installer distribution</h3>
+<p>DirectBeam's public policy pages and Windows installer are provided through GitHub Pages and GitHub Releases. When you open those pages or download an installer, GitHub may process IP addresses, access requests, security logs and related technical data according to GitHub's own privacy terms. Those website or download interactions are separate from transferring files locally between your devices. Do not send private pairing codes, file contents or purchase tokens to support unless strictly necessary and expressly requested through an appropriate secure channel.</p>
+
 <h2>13. How information is used</h2>
 
 <p>
@@ -607,9 +625,11 @@ code{
 <p>
   DirectBeam has no DirectBeam account database to delete. Local-data removal
   instructions are available on the
-  <a href="https://flirtyquizcontact-rgb.github.io/Data-Deletion-Request/">Data Deletion and Local Data Controls</a>
+  <a href="https://quizfansstudio.github.io/Data-Deletion-Request/">Data Deletion and Local Data Controls</a>
   page.
 </p>
+
+<p><strong>Windows Companion data:</strong> paired-device information and local diagnostic logs are held on the user's PC until erased there; an authorized user can unpair the phone, delete local Companion metadata and logs in <code>%LOCALAPPDATA%\DirectBeam\Companion\</code>, and remove corresponding entries from Windows Credential Manager. Downloaded files and exported copies must be deleted separately from their storage folders. Uninstallation alone should not be relied on to remove all such data.</p>
 
 <h2>17. Your privacy choices and rights</h2>
 
@@ -635,10 +655,12 @@ code{
 
 <p>
   Requests concerning information actually held by us may be sent to
-  <a href="mailto:flirtyquiz.contact@gmail.com">flirtyquiz.contact@gmail.com</a>.
+  <a href="mailto:quizfans.studio@gmail.com">quizfans.studio@gmail.com</a>.
   We may need sufficient information to identify the relevant communication or
   request, but we will not ask for unnecessary transfer-file content.
 </p>
+
+<p>For Windows desktop transfers, keep Windows updated, protect local account access, verify the Android device fingerprint during pairing and use a trusted network. A verified HTTPS connection between devices does not make a file safe to open; scan unknown files and maintain backups. If a computer is shared, other persons with access to that Windows profile or its download folders may be able to view received files.</p>
 
 <h2>18. Security</h2>
 
@@ -717,7 +739,7 @@ code{
 
 <p>
   Privacy questions, legal requests or support enquiries:
-  <a href="mailto:flirtyquiz.contact@gmail.com">flirtyquiz.contact@gmail.com</a>.
+  <a href="mailto:quizfans.studio@gmail.com">quizfans.studio@gmail.com</a>.
 </p>
 
 </article>
@@ -729,13 +751,13 @@ code{
     No account. No DirectBeam cloud. Local transfer.<br><br>
 
 ```
-<a href="mailto:flirtyquiz.contact@gmail.com">flirtyquiz.contact@gmail.com</a>
+<a href="mailto:quizfans.studio@gmail.com">quizfans.studio@gmail.com</a>
 <span> · </span>
 <a href="privacy.html">Privacy Policy</a>
 <span> · </span>
 <a href="terms.html">Terms of Service</a>
 <span> · </span>
-<a href="https://flirtyquizcontact-rgb.github.io/Data-Deletion-Request/">Data Controls</a>
+<a href="https://quizfansstudio.github.io/Data-Deletion-Request/">Data Controls</a>
 
 <p>© 2026 DirectBeam. All rights reserved.</p>
 ```
