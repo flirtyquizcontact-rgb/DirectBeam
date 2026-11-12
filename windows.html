@@ -147,13 +147,13 @@ const api = "https://api.github.com/repos/QuizFansStudio/DirectBeam/releases/lat
   try {
     const response = await fetch(api, {headers:{"Accept":"application/vnd.github+json"}});
     if (response.status === 404) {
-      // Retain the verified V2.3.4 direct-download fallback.
+      // Keep the verified public 2.3.7 download link unchanged.
       return;
     }
     if (!response.ok) throw new Error("GitHub API " + response.status);
     const release = await response.json();
     if (release.draft || release.prerelease) {
-      // Retain the verified V2.3.4 direct-download fallback.
+      // Keep the verified public 2.3.7 download link unchanged.
       return;
     }
     const tag = typeof release.tag_name === "string" ? release.tag_name : "";
