@@ -149,7 +149,7 @@ code{
 
   <p class="small">
     <strong>Effective date:</strong> June 21, 2026 ·
-    <strong>Last updated:</strong> November 11, 2026
+    <strong>Last updated:</strong> November 12, 2026
   </p>
 </header>
 
@@ -262,6 +262,11 @@ code{
 <h3>3.5 Optional DirectBeam Windows Companion</h3>
 <p>The Windows Companion is a separate, optional Windows desktop application used with DirectBeam on Android. When you explicitly connect and authorize it, the desktop app may discover your Android device on the local network, establish an authenticated HTTPS connection with certificate-fingerprint verification, display the files and folders made available by Android, and send or receive files you select. The desktop client is distinct from the browser-based PC Connect HTTP workflow.</p>
 <p>For those operations, the two devices may exchange device identifiers, display names, local IP addresses and ports, TLS certificate fingerprints, pairing or session credentials, file names, sizes, folder information, progress, integrity information and selected file contents. Only the connected devices participate in the ordinary local file transfer. The user controls which device, folder, file and destination is authorized; other local-network participants must not be treated as trusted merely because they share a Wi-Fi connection.</p>
+
+<h3>3.6 Photo and video library permissions for Windows Phone Library</h3>
+<p>The optional <strong>Windows Phone Library</strong> feature can list photos and videos from Android's media library for browsing and selective download on a paired, authorized Windows PC. After you explicitly select <strong>ALLOW MEDIA ACCESS</strong> in DirectBeam and approve the Android permission prompt, the Android app may read the permitted images and videos using Android MediaStore. Depending on the permission scope, the companion may display file names, sizes, media types, dates, folder information and available previews, and can download the files you choose.</p>
+<p>For this functionality, DirectBeam requests <code>android.permission.READ_MEDIA_IMAGES</code> and <code>android.permission.READ_MEDIA_VIDEO</code> on supported Android versions. These permissions support browsing the authorized library from Windows; Android Photo Picker is also available for selecting specific files directly on your phone, but does not itself provide remote library browsing. Granting broad media access is optional: you can use the separate <strong>CHOOSE PHOTOS / DOCUMENTS</strong> picker instead. On supported Android versions you may choose selected photos and videos rather than the full library. You can later modify or revoke access in Android Settings.</p>
+<p>Only pair with computers you trust. Anyone using an authorized PC may see the media items exposed by the permissions you grant and may keep local copies of files downloaded during the session. DirectBeam does not automatically upload the Android photo or video library to a DirectBeam-operated cloud service; transfer of file content occurs through supported device-to-device workflows.</p>
 
 <h2>4. Transfer metadata and technical information</h2>
 
