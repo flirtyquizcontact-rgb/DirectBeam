@@ -58,6 +58,16 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:25px 0 44px;colo
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 @media(max-width:760px){.release{grid-template-columns:1fr}.steps,.feature-grid{grid-template-columns:1fr}.hero{padding-top:40px}.wrap{width:calc(100% - 30px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* DirectBeam 2026-11-12: prevent button/text overflow at all viewport widths. */
+.wrap,main,section,.release,.release > *, .cta-panel,.card,.feature,.note,details,.nav,.nav-right{min-width:0;max-width:100%}
+.release{grid-template-columns:minmax(0,1.45fr) minmax(0,.8fr)}
+.cta-panel{grid-template-columns:minmax(0,1fr)}
+.btn{min-width:0;width:100%;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:normal;line-height:1.35;padding:12px 14px}
+.nav-right a,.status,.download-meta,.small,.card p,.feature p,.note p,footer{overflow-wrap:anywhere}
+.nav-right{align-items:center;row-gap:8px}
+@media(max-width:760px){.release{grid-template-columns:minmax(0,1fr)}.cta-panel{width:100%}.nav-right{gap:8px 13px}.brand{min-width:0}}
+@media(max-width:400px){.wrap{width:calc(100% - 24px)}.release{padding:18px 14px}.nav{gap:10px}.nav-right{font-size:13px}.hero h1{overflow-wrap:anywhere}}
 </style>
 </head>
 <body>
@@ -77,7 +87,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <div class="eyeline">Get the official desktop app</div>
 <h2 id="download-heading">Download Windows Companion</h2>
 <p id="release-summary">DirectBeam Companion V2.3.4 for Windows x64 is available from the official GitHub release. Follow the setup instructions below to connect your Android phone.</p>
-<p class="small" id="release-availability">The verified public installer is Windows Companion 2.3.4. The newer six-language 2.3.5 build is locally tested but not public yet. The page updates when GitHub publishes the exact verified installer.</p>
+<p class="small" id="release-availability">This page currently offers the verified public 2.3.4 installer. Windows Companion 2.3.7 adds QR pairing and automatic refresh, but its download will appear here only after the exact release asset and SHA-256 are confirmed on GitHub.</p>
 <div id="release-status" class="status ready" role="status" aria-live="polite">Windows installer available · V2.3.4</div>
 </div>
 <div class="cta-panel">
@@ -94,8 +104,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <article class="card"><div class="stepno">1</div><h3>Install Android app</h3><p>Install or update <a href="https://play.google.com/store/apps/details?id=com.quizfans.directbeam">DirectBeam on Google Play</a>, then open it on your Android phone.</p></article>
 <article class="card"><div class="stepno">2</div><h3>Start the phone session</h3><p>Open <strong>PC Connect</strong> on Android. Check that the PC/API session shows <strong>Live / Running</strong>. If it is stopped, tap the available <strong>Start</strong> control and leave the session active during transfers.</p></article>
 <article class="card"><div class="stepno">3</div><h3>Use the same local network</h3><p>Connect your phone and Windows PC to the same trusted home or office network. If Windows requests a network permission, allow the app on private networks only.</p></article>
-<article class="card"><div class="stepno">4</div><h3>Launch Windows Companion</h3><p>Open <strong>DirectBeam Companion</strong> on Windows and use its <strong>Find / Scan phone</strong> option. If your phone is already paired, try the saved-device reconnect option.</p></article>
-<article class="card"><div class="stepno">5</div><h3>Approve secure pairing</h3><p>For a new PC, check the verification information displayed by both devices. Approve the connection on Android and enter the <strong>8-digit pairing code</strong> as requested. Never share the code or session token.</p></article>
+<article class="card"><div class="stepno">4</div><h3>Launch Windows Companion</h3><p>Open <strong>DirectBeam Companion</strong>. In version 2.3.7, display the Windows pairing QR code; on a compatible Android DirectBeam, open <strong>PC Connect → Scan Windows QR</strong>. For older desktop versions, use <strong>Find / Scan phone</strong> or the supported manual connection flow.</p></article>
+<article class="card"><div class="stepno">5</div><h3>Approve secure pairing</h3><p>Review the pairing prompt on Android and approve the connection. Version 2.3.7 supports QR pairing; older versions may request an <strong>8-digit pairing code</strong>. Only approve devices you recognize, and never share QR codes or session tokens.</p></article>
 <article class="card"><div class="stepno">6</div><h3>Transfer your files</h3><p>Use <strong>PC Workspace</strong> to send files to Android. Open <strong>Phone Library</strong> to select authorized files and <strong>Save to PC</strong>. Received files are normally saved in <code>Downloads\DirectBeam</code>.</p></article>
 </div>
 <div class="note"><strong>Using browser mode instead?</strong> Windows installation is optional for browser transfers. On Android, open PC Connect, start its browser session and use the URL/QR shown by the phone in a browser on the same trusted network.</div>
@@ -132,14 +142,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   const button = document.getElementById("installer-download");
   const meta = document.getElementById("installer-details");
   const api = "https://api.github.com/repos/QuizFansStudio/DirectBeam/releases/latest";
-  const officialAssetName = "DirectBeam_Companion_Setup_x64.exe";
   const downloadPrefix = "https://github.com/QuizFansStudio/DirectBeam/releases/download/";
   const availability = document.getElementById("release-availability");
   const checksumNote = document.getElementById("installer-checksum-note");
   // Keep both domains synchronized and permit only verified, independently hashed release assets.
-  const approvedSha = Object.freeze({
-    "windows-companion-v2.3.4": "55d6d98c1c41adf5607179ce101d2fbfbc9e0af66da3bbc65792d3465f5dd40c",
-    "windows-companion-v2.3.5": "a40e41665777cf0d3947756878699bd5ac9f94ee69c06723d69447694cf71ee7"
+  const approvedReleases = Object.freeze({
+    "windows-companion-v2.3.4": {file:"DirectBeam_Companion_Setup_x64.exe",sha:"55d6d98c1c41adf5607179ce101d2fbfbc9e0af66da3bbc65792d3465f5dd40c"},
+    "windows-companion-v2.3.5": {file:"DirectBeam_Companion_Setup_x64.exe",sha:"a40e41665777cf0d3947756878699bd5ac9f94ee69c06723d69447694cf71ee7"},
+    "windows-companion-v2.3.7": {file:"DirectBeam_Companion_2.3.7_QR_PREVIEW_AUTOREFRESH_RC_Setup_x64.exe",sha:"f81ecb9b2dc77fb8077d49e59398522dbcbb57e7d1fa0d90868f68c23af5195f"}
   });
   try {
     const response = await fetch(api, {headers:{"Accept":"application/vnd.github+json"}});
@@ -153,15 +163,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       // Retain the verified V2.3.4 direct-download fallback.
       return;
     }
-    const asset = Array.isArray(release.assets) ? release.assets.find(item =>
-      item.name === officialAssetName && typeof item.browser_download_url === "string" &&
-      item.browser_download_url.startsWith(downloadPrefix) && item.size > 0) : null;
-    if (!asset) {
-      // Retain the verified V2.3.4 direct-download fallback.
-      return;
-    }
     const tag = typeof release.tag_name === "string" ? release.tag_name : "";
-    const trustedSha = Object.prototype.hasOwnProperty.call(approvedSha, tag) ? approvedSha[tag] : null;
+    const approved = Object.prototype.hasOwnProperty.call(approvedReleases, tag) ? approvedReleases[tag] : null;
+    if (!approved) return;
+    const asset = Array.isArray(release.assets) ? release.assets.find(item =>
+      item.name === approved.file && typeof item.browser_download_url === "string" &&
+      item.browser_download_url.startsWith(downloadPrefix + tag + "/") && item.size > 0) : null;
+    if (!asset) return;
+    const trustedSha = approved.sha;
     const actualDigest = typeof asset.digest === "string" ? asset.digest.toLowerCase() : "";
     if (!trustedSha || actualDigest !== "sha256:" + trustedSha) {
       // Never advertise an unpublished, unknown or mismatched binary as verified.
@@ -169,15 +178,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     }
     button.href = asset.browser_download_url;
     button.removeAttribute("hidden");
-    const versionLabel = tag === "windows-companion-v2.3.5" ? "2.3.5" : "2.3.4";
+    const versionLabel = tag.slice("windows-companion-v".length);
     status.textContent = "Windows installer available · V" + versionLabel;
     status.classList.add("ready");
     summary.textContent = "DirectBeam Companion " + versionLabel + " for Windows x64 is available from our verified GitHub release. Follow the setup guide below.";
     const mb = (asset.size / 1048576).toFixed(1);
     meta.textContent = "V" + versionLabel + " · " + mb + " MiB · SHA-256: " + trustedSha.toUpperCase();
-    availability.textContent = versionLabel === "2.3.5"
-      ? "The verified Windows Companion 2.3.5 installer includes the six-language interface (English, Romanian, French, Spanish, German and Italian) and translated Connection Guide."
-      : "The public installer is Windows Companion 2.3.4. The newer six-language 2.3.5 version is not published on GitHub yet.";
+    availability.textContent = versionLabel === "2.3.7"
+      ? "Verified Windows Companion 2.3.7: QR pairing, automatic PC Workspace refresh and multilingual interface. Use a compatible Android DirectBeam build."
+      : versionLabel === "2.3.5"
+        ? "Verified Windows Companion 2.3.5 includes the six-language interface and translated Connection Guide."
+        : "The verified public installer is Windows Companion 2.3.4. Version 2.3.7 with QR pairing remains pending until its exact GitHub release is verified.";
     checksumNote.textContent = "Verified public installer SHA-256 (V" + versionLabel + "): " + trustedSha.toUpperCase() + ". Check this hash against the downloaded installer before running it.";
     meta.removeAttribute("hidden");
   } catch (_) {
