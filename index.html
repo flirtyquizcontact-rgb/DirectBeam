@@ -213,6 +213,14 @@ a:focus-visible{outline:3px solid #ffda85;outline-offset:4px}
 .windows-action .btn{padding:15px 16px;display:block;text-decoration:none;white-space:normal}
 .windows-action small{color:#bbcee1;font-size:12px;line-height:1.5}
 @media(max-width:760px){.windows-companion-feature{grid-template-columns:1fr}.windows-action{text-align:left}}
+
+/* DirectBeam 2026-11-12: adaptive CTA and layout */
+.wrap,.grid,.card,.content,.btns,.windows-companion-feature,.windows-companion-feature>*,.windows-action,.nav-inner,.nav-links{min-width:0;max-width:100%}
+.windows-companion-feature{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr)}.windows-action{grid-template-columns:minmax(0,1fr)}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;line-height:1.35}
+.nav-links a,.pill,.badge,.windows-companion-feature p,.windows-action small,.content p,.card p{overflow-wrap:anywhere}
+@media(max-width:760px){.windows-companion-feature{grid-template-columns:minmax(0,1fr)}.btns{display:grid;grid-template-columns:minmax(0,1fr)}.btns .btn{width:100%;min-height:46px}.nav-links{gap:8px 14px}}
+@media(max-width:400px){.wrap{width:calc(100% - 24px)}.windows-companion-feature{padding:19px 15px}.content{padding:20px 15px}}
 </style>
 
 </head>
