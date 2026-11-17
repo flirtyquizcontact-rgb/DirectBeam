@@ -221,6 +221,29 @@ a:focus-visible{outline:3px solid #ffda85;outline-offset:4px}
 .nav-links a,.pill,.badge,.windows-companion-feature p,.windows-action small,.content p,.card p{overflow-wrap:anywhere}
 @media(max-width:760px){.windows-companion-feature{grid-template-columns:minmax(0,1fr)}.btns{display:grid;grid-template-columns:minmax(0,1fr)}.btns .btn{width:100%;min-height:46px}.nav-links{gap:8px 14px}}
 @media(max-width:400px){.wrap{width:calc(100% - 24px)}.windows-companion-feature{padding:19px 15px}.content{padding:20px 15px}}
+
+/* DirectBeam visual continuity with Windows Companion - 2026-11-17 */
+:root{color-scheme:dark;--bg:#050812;--panel:#101827;--panel2:#151f31;--text:#f5faff;--muted:#b7c8dd;--accent:#42e8ff;--accent2:#3a8dff;--line:rgba(142,181,234,.25)}
+body{background:radial-gradient(ellipse at 90% -3%,rgba(76,80,206,.22),transparent 38%),radial-gradient(ellipse at 10% 24%,rgba(16,157,222,.13),transparent 39%),#050812;-webkit-font-smoothing:antialiased}
+nav{background:rgba(5,8,18,.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(142,181,234,.23)}
+.nav-inner{min-height:84px}
+.brand-icon{width:46px;height:46px;border-radius:12px;box-shadow:0 0 24px rgba(66,232,255,.25)}
+.nav-links a{color:#d6e5f4}
+.hero{position:relative;padding:78px 0 61px;overflow:hidden}
+.hero:before{content:"";position:absolute;pointer-events:none;z-index:-1;inset:15px 0 0;background:radial-gradient(ellipse at 13% 45%,rgba(66,232,255,.1),transparent 42%),radial-gradient(ellipse at 87% 25%,rgba(155,123,255,.14),transparent 45%)}
+.hero-icon{width:110px;height:110px;border-radius:28px;box-shadow:0 0 0 1px rgba(66,232,255,.28),0 14px 48px rgba(26,153,255,.28)}
+.hero h1{letter-spacing:-.06em;background:linear-gradient(110deg,#fff 20%,#8fefff 75%,#b8a5ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero h1 span{color:inherit}
+.pill{border-color:rgba(142,181,234,.28);background:rgba(15,30,49,.92)}
+.card,.content{background:linear-gradient(155deg,#15263d,#0c1527);border:1px solid rgba(142,181,234,.24);box-shadow:0 19px 50px rgba(0,0,0,.18)}
+.card{transition:transform .2s ease,border-color .2s ease}
+.card:hover{transform:translateY(-3px);border-color:rgba(66,232,255,.42)}
+.windows-companion-feature{border-color:rgba(66,232,255,.42);background:radial-gradient(circle at 95% 0%,rgba(155,123,255,.18),transparent 45%),linear-gradient(120deg,#162b40,#11182d 70%)}
+.btn-primary,.windows-action .btn{background:linear-gradient(110deg,#42e8ff,#3a8dff);color:#051225;box-shadow:0 12px 30px rgba(58,141,255,.19);border-color:#91e8fc}
+.btn:hover{filter:brightness(1.07)}
+a:focus-visible,button:focus-visible{outline:3px solid #9b7bff;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+
 </style>
 
 </head>
