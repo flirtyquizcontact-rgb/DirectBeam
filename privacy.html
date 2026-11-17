@@ -113,6 +113,52 @@ code{
   .hero{padding-top:54px}
   table{display:block;overflow-x:auto}
 }
+
+/* DirectBeam branded visual system, 2026-11-17.
+   Follows the official Windows Companion design; legal copy remains unchanged. */
+:root{color-scheme:dark;--bg:#050812;--panel:#101827;--panel2:#151f31;--text:#f5faff;--muted:#b7c8dd;--accent:#42e8ff;--accent2:#3a8dff;--line:rgba(142,181,234,.25);--ok:#60e6ae;--warning:#f0c27f}
+html{scroll-behavior:smooth}
+body{color:var(--text);background:radial-gradient(ellipse at 91% -5%,rgba(76,80,206,.22),transparent 38%),radial-gradient(ellipse at 9% 17%,rgba(16,157,222,.13),transparent 39%),#050812;-webkit-font-smoothing:antialiased}
+a{color:#8cefff}
+a:focus-visible,button:focus-visible{outline:3px solid #9b7bff;outline-offset:4px;border-radius:8px}
+nav{background:rgba(5,8,18,.87);border-bottom:1px solid rgba(142,181,234,.2);backdrop-filter:blur(16px)}
+.nav-inner{min-height:84px;gap:18px}
+.brand{display:inline-flex;align-items:center;gap:12px;color:#f5faff;font-size:19px;font-weight:850;text-decoration:none;white-space:nowrap}
+.brand span{color:#42e8ff}
+.brand-logo{width:46px;height:46px;object-fit:cover;border-radius:12px;box-shadow:0 0 24px rgba(66,232,255,.22)}
+.nav-links{gap:10px 18px;font-size:14px;font-weight:690}
+.nav-links a{color:#d0deee;transition:color .2s ease}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:#79efff}
+.hero{position:relative;margin:34px 0 25px;padding:36px clamp(20px,4vw,42px) 34px;border:1px solid rgba(66,232,255,.24);border-radius:23px;overflow:hidden;background:radial-gradient(circle at 100% 0%,rgba(155,123,255,.16),transparent 49%),linear-gradient(122deg,#14273c,#0e1628 73%);box-shadow:0 22px 60px rgba(0,0,0,.17)}
+.hero:before{content:"";position:absolute;right:-110px;top:-150px;width:340px;height:340px;border:1px solid rgba(115,208,255,.09);border-radius:50%;pointer-events:none}
+.hero .badge{background:rgba(10,57,78,.75);color:#a1f2ff;border:1px solid rgba(66,232,255,.45);letter-spacing:.12em;font-size:11px;font-weight:800}
+.hero h1{font-size:clamp(35px,5.5vw,62px);letter-spacing:-.045em;line-height:1.1;margin:16px 0;background:linear-gradient(100deg,#ffffff 12%,#80ebff 67%,#b59bff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero .lead{color:#c1d2e6;font-size:clamp(16px,1.7vw,19px);line-height:1.7}
+.hero .small{color:#9fb6cb}
+.hero-brandline{display:flex;align-items:center;gap:14px;margin:0 0 16px;color:#b9e9ff;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.hero-brandline img{width:62px;height:62px;border-radius:16px;object-fit:cover;box-shadow:0 0 28px rgba(66,232,255,.22)}
+.content{background:linear-gradient(160deg,rgba(17,31,51,.95),rgba(11,18,33,.97));border:1px solid rgba(142,181,234,.24);border-radius:23px;padding:clamp(20px,4vw,44px);box-shadow:0 22px 60px rgba(0,0,0,.15)}
+.content>h2{margin-top:42px;margin-bottom:15px;padding:13px 16px;border:1px solid rgba(66,232,255,.17);border-left:3px solid #42e8ff;border-radius:11px;background:linear-gradient(100deg,rgba(24,59,84,.7),rgba(21,31,51,.38));font-size:clamp(21px,2.3vw,27px);letter-spacing:-.025em;scroll-margin-top:120px}
+.content>h2:first-child{margin-top:0}
+.content>h3{color:#d8f3ff;font-size:19px;scroll-margin-top:120px}
+.content p,.content li{color:#ccd9eb}
+.content strong{color:#f4fbff}
+.note{border-left-color:#42e8ff;background:#13263b;border-radius:11px;border-top:1px solid rgba(142,181,234,.18);border-right:1px solid rgba(142,181,234,.18);border-bottom:1px solid rgba(142,181,234,.18)}
+.ok{border-left-color:#60e6ae}
+.warning{border-left-color:#f0c27f}
+table{display:block;overflow-x:auto;max-width:100%;border-radius:12px}
+th,td{border-color:rgba(142,181,234,.25)}
+th{background:#17314a}
+code{background:#091726;color:#9cecff}
+footer{margin-top:35px;background:rgba(8,13,24,.42);border-top:1px solid rgba(142,181,234,.22)}
+footer strong{color:#ecfaff}
+footer a{color:#92dff5}
+.wrap,.content,.hero,.nav-inner,.nav-links,.hero-brandline{min-width:0;max-width:100%}
+.content p,.content li,.nav-links a,.small,td,th{overflow-wrap:anywhere}
+@media(max-width:800px){.nav-inner{align-items:flex-start;padding:12px 0;gap:12px}.nav-links{gap:8px 14px}.hero{margin-top:18px;padding:25px 19px}.hero-brandline img{width:52px;height:52px}.content{padding:20px 17px}.content>h2{padding:12px;margin-top:30px}}
+@media(max-width:390px){.wrap{width:calc(100% - 24px)}.brand{font-size:17px}.brand-logo{width:40px;height:40px}.hero{padding:20px 15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
 </style>
 
 </head>
@@ -121,7 +167,7 @@ code{
 
 <nav>
   <div class="wrap nav-inner">
-    <a class="brand" href="index.html">Direct<span>Beam</span></a>
+    <a class="brand" href="index.html"><img class="brand-logo" src="https://play-lh.googleusercontent.com/yA0eCNGCP8iwyPnvoc7XECDZReeQOPjFHlIO_jgY5SolQcJEFQyx1HNsQKF4YPdQElkXKyo-wxKaUsLnOiGhuEo=w240-h480" width="46" height="46" alt="">Direct<span>Beam</span></a>
 
 <div class="nav-links">
   <a href="windows.html">Windows Companion</a>
@@ -137,6 +183,7 @@ code{
 <main class="wrap">
 
 <header class="hero">
+  <div class="hero-brandline"><img src="https://play-lh.googleusercontent.com/yA0eCNGCP8iwyPnvoc7XECDZReeQOPjFHlIO_jgY5SolQcJEFQyx1HNsQKF4YPdQElkXKyo-wxKaUsLnOiGhuEo=w240-h480" width="62" height="62" alt="DirectBeam app icon"><span>PRIVACY & DATA PROTECTION<br><span style="font-weight:600;color:#aecfe8;letter-spacing:.03em;text-transform:none">Quiz Fans Studio · DirectBeam</span></span></div>
   <span class="badge">PRIVACY</span>
 
   <h1>Privacy Policy</h1>
